@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Agregar Empresa</title>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+             <style>
+                 .tipo{
+                     display: none;
+                 }
+            </style>
+    </head>
+    <body>
+        <h1>Agregar Empresa</h1>
+        <a th:href="@{/}">Regresar</a>
+
+        <form th:action="@{/guardar}" method="post" th:object="${clienteEmpresa}">
+            <label>Razon Social :</label>
+            <input type="text"  th:field="*{nombre}"/>
+            <br>
+            <br>
+                <label>Inicio de Actividad:</label>
+                <input type="date" name="inicioDeActividades" th:field="*{inicioDeActividades}"/>
+            <br>
+            <br>
+            <label>Cuit</label>    
+            <input type="number" name="cuit" th:field="*{dni}"/>
+            <input type="submit" name="guardar" value="Guardar" />
+
+        </form>
+    </body>
+</html>
